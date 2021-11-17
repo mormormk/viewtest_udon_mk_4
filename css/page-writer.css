@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+/* -------------------------------------
+-----------shingle-shop 共通------------
+--------------------------------------*/
+
+/* ---------ブレイクポイント--------- */
+@media screen and (min-width: 600px) {
+}
+@media screen and (min-width: 1025px) {
+}
+
+/* -------全体の横余白---Padding---- */
+.writer-container {
+  padding: 0 45px;
+}
+@media screen and (min-width: 600px) {
+  .writer-container {
+    padding: 0 20% 30px;
+  }
+}
+
+/* --セクションごとの上余白-Padding-- */
+.writer-group {
+  padding-top: 35px;
+}
+@media screen and (min-width: 600px) {
+  .writer-group {
+    padding-top: 45px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .writer-group {
+    padding-top: 80px;
+  }
+}
+
+/* --その他下層グループの下余白-margin-- */
+.writer-space-bottom {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 600px) {
+  .writer-space-bottom {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .writer-space-bottom {
+    margin-bottom: 45px;
+  }
+}
+
+/* ------------------------------------
+-----------ページ別ヘッダー------------
+-------------------------------------- */
+.page-writer-top {
+  color: var(--white-color);
+}
+
+/* -------------topimg---------------- */
+.writer-top {
+  position: relative;
+}
+.writer-top-img {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+}
+
+/*------------top内のテキスト--------- */
+.top-logo {
+  padding-top: 29px;
+}
+
+/*-------------タイトル---------------- */
+.top-title {
+  font-size: 20px;
+  line-height: 1.6;
+}
+@media screen and (min-width: 1025px) {
+  .top-logo {
+    padding-top: 80px;
+  }
+  .top-title {
+    font-size: 40px;
+  }
+}
+
+/* ==========================topbackbtn==================================== */
+
+.backTop {
+  position: fixed;
+  position: relative;
+  /* left: 50px; */
+  bottom: 50px;
+  right: 50px;
+  z-index: 5;
+  width: 80px;
+  height: 80px;
+  background: url(../img/udon_img/topbtn_udon.png) no-repeat;
+  background-size: cover;
+  transition: opacity 0.8s;
+  /*デフォルトで非表示にする*/
+  opacity: 0;
+  visibility: hidden;
+  /* transform: matrix(1, 0, 0, 1, 0, 100);
+  transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); */
+}
+/*このクラスが付与されると表示する*/
+.active {
+  opacity: 1;
+  visibility: visible;
+  /* transform: matrix(1, 0, 0, 1, 0, 0); */
+}
+
+/* hoverしたとき現れる画像 */
+.backTop-bottom {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  background: url(../img/udon_img/udontop2.png) no-repeat;
+  background-size: cover;
+}
+
+/* hoverしたとき動作 */
+.backTop:hover {
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+}
+.backTop:hover .backTop-bottom {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==================================================================== */
+/* ---------------------------------------
+------------------main--------------------
+/* ---------------------------------------
+----------------全体紹介文----------------
+--------------------------------------- */
+@media screen and (min-width: 1025px) {
+  .writer-intro-txt {
+    font-size: 24px;
+  }
+}
+
+/* -------------------------------------
+----------メンバーリスト一覧------------
+--------------------------------------- */
+@media screen and (min-width: 1025px) {
+  .writer-member {
+    padding: 50px 0;
+  }
+}
+
+/*-----------レスポンシブflex---------- */
+.member-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.member-li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0;
+  padding: 12px 0;
+}
+@media screen and (min-width: 1025px) {
+  .member-li {
+    width: 46.5%;
+    padding: 80px 0 0;
+  }
+}
+
+/*------------アバターアイコン--------- */
+.member-avater {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.member-img {
+  border-radius: 50%;
+}
+@media screen and (min-width: 1025px) {
+  .member-avater {
+    display: block;
+    width: 110px;
+    height: 130px;
+  }
+}
+
+/*--------------紹介文cont-------------- */
+.member-cont {
+  width: calc(100% - 95px);
+}
+@media screen and (min-width: 1025px) {
+  .member-cont {
+    width: calc(100% - 140px);
+  }
+}
+
+/*-----------ハンドルネーム------------ */
+@media screen and (min-width: 1025px) {
+  .member-name {
+    font-size: 35px;
+  }
+}
+
+/*--------------執筆者情報------------- */
+.member-txt {
+  margin: 10px 0 0 0;
+  font-size: 12px;
+}
+@media screen and (min-width: 1025px) {
+  .member-txt {
+    font-size: 21px;
+  }
+}
