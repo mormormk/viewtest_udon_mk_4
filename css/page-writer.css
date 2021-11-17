@@ -90,52 +90,100 @@
 
 .backTop {
   position: fixed;
-  position: relative;
-  /* left: 50px; */
   bottom: 50px;
   right: 50px;
-  z-index: 5;
   width: 80px;
   height: 80px;
-  background: url(../img/udon_img/topbtn_udon.png) no-repeat;
-  background-size: cover;
-  transition: opacity 0.8s;
-  /*デフォルトで非表示にする*/
   opacity: 0;
   visibility: hidden;
-  /* transform: matrix(1, 0, 0, 1, 0, 100);
-  transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); */
+  transition: opacity 0.8s;
 }
 /*このクラスが付与されると表示する*/
 .active {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.8s;
   /* transform: matrix(1, 0, 0, 1, 0, 0); */
+}
+
+/* 囲い */
+.backTop-wrap {
+  position: relative;
+  /* left: 50px; */
+  width: 100%;
+  height: 100%;
+}
+/* 基本のボタン */
+.backTop-btn {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*デフォルトで非表示にする*/
+  /* opacity: 0;
+  visibility: hidden; */
+  /* transform: matrix(1, 0, 0, 1, 0, 100);
+  transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); */
 }
 
 /* hoverしたとき現れる画像 */
 .backTop-bottom {
   position: absolute;
-  top: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 70px;
+  /* height: 100%; */
+  object-fit: cover;
   opacity: 0;
   visibility: hidden;
-  z-index: 2;
-  background: url(../img/udon_img/udontop2.png) no-repeat;
-  background-size: cover;
+}
+.backTop-top {
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 80px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 6;
+  object-fit: contain;
 }
 
-/* hoverしたとき動作 */
-.backTop:hover {
+/* hoverしたとき動作  */
+/* .backTop:hover {
   cursor: pointer;
+  opacity: 0;
+} */
+
+.backTop:hover .backTop-btn {
   opacity: 0;
   visibility: hidden;
 }
 .backTop:hover .backTop-bottom {
   opacity: 1;
   visibility: visible;
+}
+
+.backTop:hover .backTop-top {
+  opacity: 1;
+  visibility: visible;
+  /* z-index: 10; */
+  animation: slideIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
 }
 
 /* ==================================================================== */
